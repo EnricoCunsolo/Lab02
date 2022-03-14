@@ -1,6 +1,6 @@
 package it.polito.tdp.alien;
 
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
 
 public class Dizionario {
@@ -21,13 +21,15 @@ public class Dizionario {
 	}
 	
 	public String traduciParolaAliena(String parolaAliena) {
-		
+		String s = "";
 		for(Parola p : dizionario) {
 			if(p.getParolaAliena().compareTo(parolaAliena)==0) {
-				return p.getParola();
+				s += p.getParola()+"\n";
 			}
 		}
-		return null;
+		if(s.compareTo("")==0)
+			return null;
+		return s;
 	}
 	
 	

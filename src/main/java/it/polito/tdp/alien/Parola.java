@@ -1,5 +1,6 @@
 package it.polito.tdp.alien;
 
+
 public class Parola {
 	
 	String parolaAliena;
@@ -8,7 +9,7 @@ public class Parola {
 	public Parola(String parolaAliena, String parola) {
 		this.parolaAliena = parolaAliena;
 		this.parola = parola;
-	}
+	}	
 
 	public String getParolaAliena() {
 		return parolaAliena;
@@ -24,7 +25,7 @@ public class Parola {
 
 	public void setParola(String parola) {
 		this.parola = parola;
-	}
+	}	
 	
 	
 }

@@ -53,7 +53,7 @@ public class FXMLController {
     	if(st.hasMoreTokens()) {
     		String s2 = st.nextToken().toLowerCase(); // parola tradotta
     		
-    		if( s2.matches(".*[A-Z].*") && s2.matches(".*[a-z].*")) {
+    		if( s2.matches(".*[A-Z].*") && s2.matches(".*[a-z].*") && s2.matches(".*?.*")) {
         		txtRisposta.setText("Inserire solo caratteri alfanumerici!");
         		return;
         	}
@@ -70,7 +70,7 @@ public class FXMLController {
     			return;
     		}
     		
-    		txtRisposta.setText("La parola aliena "+s1+" ha come traduzione "+ traduzione);
+    		txtRisposta.setText("La parola aliena "+s1+" ha come traduzione " + "\n"+ traduzione);
     	}
     	
     	
