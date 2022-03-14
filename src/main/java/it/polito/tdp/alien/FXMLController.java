@@ -39,21 +39,19 @@ public class FXMLController {
     	
     	if(testo.compareTo("")==0) {
     		txtRisposta.setText("Inserire Qualcosa!");
+    		return;
     	}
     	
     	StringTokenizer st = new StringTokenizer(testo, " ");
     	
     	String s1 = st.nextToken().toLowerCase(); // parola aliena
     	
-    	if( s1.matches(".*[A-Z].*") && s1.matches(".*[a-z].*")) {
-    		txtRisposta.setText("Inserire solo caratteri alfanumerici!");
-    		return;
-    	}
+    	if(s1.matches("[a-z]*")) {
     	
     	if(st.hasMoreTokens()) {
     		String s2 = st.nextToken().toLowerCase(); // parola tradotta
     		
-    		if( s2.matches(".*[A-Z].*") && s2.matches(".*[a-z].*") && s2.matches(".*?.*")) {
+    		if(!s2.matches("[a-z]*")) {
         		txtRisposta.setText("Inserire solo caratteri alfanumerici!");
         		return;
         	}
@@ -71,10 +69,13 @@ public class FXMLController {
     		}
     		
     		txtRisposta.setText("La parola aliena "+s1+" ha come traduzione " + "\n"+ traduzione);
+    		return;
     	}
+    	}
+    		txtRisposta.setText("Inserire solo caratteri alfanumerici!");
+    		return;
+	}
     	
-    	
-    }
 
     @FXML
     void initialize() {
